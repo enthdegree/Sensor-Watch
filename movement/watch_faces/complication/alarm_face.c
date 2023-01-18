@@ -182,11 +182,11 @@ static void _alarm_update_alarm_enabled(movement_settings_t *settings, alarm_sta
                 if ((state->alarm[i].day == weekday_idx && alarm_minutes_of_day >= now_minutes_of_day)
                     || ((weekday_idx + 1) % 7 == state->alarm[i].day && alarm_minutes_of_day <= now_minutes_of_day) 
                     || (state->alarm[i].day == ALARM_DAY_WORKDAY && (weekday_idx < 4
-                        || (weekday_idx = 5 && alarm_minutes_of_day >= now_minutes_of_day)
-                        || (weekday_idx = 6 && alarm_minutes_of_day <= now_minutes_of_day))) 
-                    || (state->alarm[i].day == ALARM_DAY_WEEKEND && (weekday_idx == 5 
-                        || (weekday_idx = 6 && alarm_minutes_of_day >= now_minutes_of_day)
-                        || (weekday_idx = 4 && alarm_minutes_of_day <= now_minutes_of_day)))) {
+                        || (weekday_idx == 5 && alarm_minutes_of_day >= now_minutes_of_day)
+                        || (weekday_idx == 6 && alarm_minutes_of_day <= now_minutes_of_day)))
+                    || (state->alarm[i].day == ALARM_DAY_WEEKEND && (weekday_idx == 5
+                        || (weekday_idx == 6 && alarm_minutes_of_day >= now_minutes_of_day)
+                        || (weekday_idx == 4 && alarm_minutes_of_day <= now_minutes_of_day)))) {
                     active_alarms = true;
                     break;
                 }
@@ -421,8 +421,10 @@ bool alarm_face_loop(movement_event_t event, movement_settings_t *settings, void
             if (watch_is_buzzer_or_led_enabled()) {
                 _alarm_play_short_beep(state->alarm[state->alarm_playing_idx].pitch);
             } else {
-                // play beep
+                // enable, play beep and disable buzzer again
+                watch_enable_buzzer();
                 _alarm_play_short_beep(state->alarm[state->alarm_playing_idx].pitch);
+                watch_disable_buzzer();
             }
         } else {
             // regular alarm beeps
