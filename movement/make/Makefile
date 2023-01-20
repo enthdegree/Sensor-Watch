@@ -41,7 +41,7 @@ SRCS += \
   ../lib/astrolib/astrolib.c \
   ../lib/morsecalc/calc.c \
   ../lib/morsecalc/calc_fns.c \
-  ../lib/morsecalc/small_strtof.c \
+  ../lib/morsecalc/calc_strtof.c \
   ../lib/morsecalc/mc.c \
   ../../littlefs/lfs.c \
   ../../littlefs/lfs_util.c \
@@ -83,7 +83,6 @@ SRCS += \
   ../watch_faces/demo/frequency_correction_face.c \
   ../watch_faces/complication/alarm_face.c \
   ../watch_faces/complication/ratemeter_face.c \
-  ../watch_faces/complication/morsecalc_face.c \
   ../watch_faces/complication/interval_face.c \
   ../watch_faces/complication/rpn_calculator_alt_face.c \
   ../watch_faces/complication/stock_stopwatch_face.c \
@@ -94,6 +93,7 @@ SRCS += \
   ../watch_faces/complication/tempchart_face.c \
   ../watch_faces/complication/tally_face.c \
   ../watch_faces/complication/tarot_face.c \
+  ../watch_faces/complication/morsecalc_face.c \
   ../watch_faces/complication/rpn_calculator_face.c \
 # New watch faces go above this line.
 
