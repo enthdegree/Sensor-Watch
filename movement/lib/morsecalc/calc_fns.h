@@ -87,9 +87,9 @@ static const calc_dict_entry_t calc_dict[] = {
     {{"ms"}, &calc_mem_subtract},
 
     // Basic operations
-    {{"a"}, &calc_add}, 
-    {{"s"}, &calc_subtract},
-    {{"n"}, &calc_negate},
+    {{"a","+"}, &calc_add}, 
+    {{"s","-"}, &calc_subtract},
+    {{"n","C"}, &calc_negate},
     {{"m"}, &calc_multiply},
     {{"d"}, &calc_divide},
     {{"i"}, &calc_invert},
@@ -106,7 +106,7 @@ static const calc_dict_entry_t calc_dict[] = {
     {{"sqrt"}, &calc_sqrt},
     
     // Trigonometric 
-    {{"sin", "sn"}, &calc_sin},
+    {{"sin"}, &calc_sin},
     {{"cos"}, &calc_cos},
     {{"tan"}, &calc_tan},
     {{"asin"}, &calc_asin},

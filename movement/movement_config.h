@@ -35,6 +35,7 @@ const watch_face_t watch_faces[] = {
     morsecalc_face,
     alarm_face,
     preferences_face,
+    voltage_face,
     set_time_face,
 };
 
