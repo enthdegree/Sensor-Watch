@@ -41,11 +41,10 @@ int calc_init(calc_state_t *cs) {
 }
 
 /* calc_input_function
- * Try to execut the token as a calculator function
- * TODO: Maybe replace this loop with binary search for token in a sorted calc_dict
+ * Try to execute the token as a calculator function
  */
 int calc_input_function(calc_state_t *cs, char *token) {
-    for(uint8_t idx=0; idx<sizeof(calc_dict)/sizeof(calc_dict[0]); idx++) {
+    for(uint8_t idx=sizeof(calc_dict)/sizeof(calc_dict[0]); idx>0; idx--) {
         for(uint8_t idxn=0; idxn<sizeof(calc_dict[idx].names)/sizeof(calc_dict[idx].names[0]); idxn++) {
             if(0 == strcmp(calc_dict[idx].names[idxn], token)) { // Found a match
                 return (*calc_dict[idx].fn)(cs); // Run calculator function
