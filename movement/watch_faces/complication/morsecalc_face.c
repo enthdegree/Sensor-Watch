@@ -40,6 +40,11 @@ The user interface (`morsecalc_face.h`, `morsecalc_face.c`) lets you talk to the
  - `alarm` is dot
  - `mode` is "finish character"
  - long-press `mode` to quit
+<<<<<<< HEAD
+=======
+ - long-press `alarm` to show stack
+ - long-press `light` to toggle the light
+>>>>>>> main
    
 ## Morse code token entry
 As you enter `.`s and `-`s, the morse code char you've entered will appear in the top center digit.
@@ -75,6 +80,11 @@ This can get long, so for convenience numerals can also be written in binary wit
  
 For example: "4.2e-3" can be entered directly, or as "4h2pC3"
   similarly, "0.0042" can also be entered as "eheedn"
+<<<<<<< HEAD
+=======
+
+Once you submit a number to the watch face, it pushes it to the top of the stack if there's room.
+>>>>>>> main
         
 ## Number display
 After a command runs, the top of the stack is displayed in this format:
@@ -98,7 +108,11 @@ To show the top of the stack, push and hold `light`/`alarm` or submit a blank to
 To show the N-th stack item (0 through 9):
 
  - Put in the Morse code for N without pushing the mode button.
+<<<<<<< HEAD
  - Push and hold either `light` or `alarm`.
+=======
+ - Push and hold `alarm`.
+>>>>>>> main
     
 To show the memory register, use `m` instead of a number. 
    
