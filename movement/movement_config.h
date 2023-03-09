@@ -31,14 +31,15 @@ const watch_face_t watch_faces[] = {
     simple_clock_face,
     stock_stopwatch_face,
     tomato_face,
+    lightmeter_face,
     thermistor_readout_face,
     morsecalc_face,
-    alarm_face,
     preferences_face,
-    voltage_face,
+    alarm_face,
     set_time_hackwatch_face,
     nanosec_face,
     finetune_face,
+    voltage_face,
 };
 
 #define MOVEMENT_NUM_FACES (sizeof(watch_faces) / sizeof(watch_face_t))

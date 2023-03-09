@@ -50,7 +50,7 @@
 #include "opt3001.h"
 
 #define LIGHTMETER_CALIBRATION 2.58
-//#define LIGHTMETER_LUX_MODE 
+#define LIGHTMETER_LUX_MODE 
 typedef struct { 
     char * str;
     float ev;
