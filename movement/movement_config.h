@@ -37,8 +37,8 @@ const watch_face_t watch_faces[] = {
     preferences_face,
     alarm_face,
     set_time_hackwatch_face,
-    nanosec_face,
     finetune_face,
+    nanosec_face,
     voltage_face,
 };
 
