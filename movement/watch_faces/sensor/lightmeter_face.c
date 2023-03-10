@@ -57,7 +57,7 @@ void lightmeter_face_activate(movement_settings_t *settings, void *context) {
 void lightmeter_show_ev(lightmeter_state_t *state) {
 
     float ev = max(min(
-                 log2(result.lux) + 
+                 log2(state->lux) + 
                  lightmeter_isos[state->iso].ev + 
                  LIGHTMETER_CALIBRATION,
             99), -9);
