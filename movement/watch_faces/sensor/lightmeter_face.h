@@ -22,27 +22,6 @@
  * SOFTWARE.
  */
 
-/* Aperture-priority Light Meter Face
- *
- * Meant to be used with the OPT3001 "Q3Q-SWAB-A1-00 Temperature + Test Points + OPT3001" flexboard.
- *
- *  - Trigger a measurement by long-pressing Alarm.
- *    Sensor integration is happening when the Signal indicator is on.
- *
- *  - ISO setting can be cycled by long-pressing Light.
- *    During integration the current ISO setting will be displayed. 
- *
- *  - EV measurement in the top right: the LAP indicator means "half stop". 
- *    So "LAP -1" means EV = -1.5. Likewise "LAP 13" means EV = +13.5  
- *
- *  - Aperture in the bottom right: the last 3 digits are the f-stop. 
- *    Adjust this number in half-stop increments using Alarm = +1/2 and Light = -1/2. 
- *
- *  - Computed best shutter speed in the bottom left: the first 3 digits are the shutter speed. 
- *    Some special chars are needed here: "-" = seconds, "h" = extra half second, "K" = thousands.
- *
- */
-
 #ifndef LIGHTMETER_FACE_H_
 #define LIGHTMETER_FACE_H_
 
@@ -61,10 +40,10 @@ static const lightmeter_ev_t lightmeter_isos[] = {
     {" i  50", -1},
     {" i 100", 0},
     {" i 160", 0.68},
-	{" i 200", 1},
-	{" i 400", 2},
-	{" i 800", 3},
-	{" i1600", 4}};
+    {" i 200", 1},
+    {" i 400", 2},
+    {" i 800", 3},
+    {" i1600", 4}};
 typedef enum { 
     LIGHTMETER_ISO_25, LIGHTMETER_ISO_50, LIGHTMETER_ISO_100, LIGHTMETER_ISO_160, LIGHTMETER_ISO_200, LIGHTMETER_ISO_400, LIGHTMETER_ISO_800, LIGHTMETER_ISO_1600, 
     LIGHTMETER_N_ISOS
@@ -75,10 +54,10 @@ static const lightmeter_ev_t lightmeter_aps[] = {
     {"1.8", -0.5},
     {"2.0", -1},
     {"2.4", -1.5},
-	{"2.8", -2},
-	{"3.3", -2.5},
-	{"4.0", -3},
-	{"4.8", -3.5},
+    {"2.8", -2},
+    {"3.3", -2.5},
+    {"4.0", -3},
+    {"4.8", -3.5},
     {"5.6", -4},
     {"6.7", -4.5},
     {"8.0", -5},
@@ -105,14 +84,14 @@ static const lightmeter_ev_t lightmeter_shs[] = {
     {"6- ",  2.5},
     {"4- ",  2.0},
     {"3- ",  1.5},
-	{"2- ",  1.0},
-	{"1h-",  0.5},
-	{"1  ",  0.0},
-	{"1h ", -0.5},
-	{"2  ", -1.0},
-	{"3  ", -1.5},
-	{"4  ", -2.0},
-	{"6  ", -2.5},
+    {"2- ",  1.0},
+    {"1h-",  0.5},
+    {"1  ",  0.0},
+    {"1h ", -0.5},
+    {"2  ", -1.0},
+    {"3  ", -1.5},
+    {"4  ", -2.0},
+    {"6  ", -2.5},
     {"8  ", -3.0},
     {"12 ", -3.5},
     {"15 ", -4.0},
@@ -153,12 +132,12 @@ typedef struct {
 static const opt3001_Config_t lightmeter_takeNewReading = { 
     .RangeNumber = 0B1100,
     .ConversionTime = 0B1,
-	.Latch = 0B1,
-	.ModeOfConversionOperation = 0B01
+    .Latch = 0B1,
+    .ModeOfConversionOperation = 0B01
 };
 
 static const opt3001_Config_t lightmeter_off = { 
-	.ModeOfConversionOperation = 0B00
+    .ModeOfConversionOperation = 0B00
 };
 
 uint16_t lightmeter_mod(uint16_t m, uint16_t n); 
