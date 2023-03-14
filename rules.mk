@@ -20,7 +20,6 @@ $(BUILD)/$(BIN).html: $(OBJS)
 		-s ASYNCIFY=1 \
 		-s EXPORTED_FUNCTIONS=_main \
 		--shell-file=$(TOP)/watch-library/simulator/shell.html
-#		-s EXPORTED_FUNCTIONS=_main \
 
 $(BUILD)/$(BIN).elf: $(OBJS)
 	@echo LD $@
